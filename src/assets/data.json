@@ -1,0 +1,17 @@
+{
+  "places": [
+    {
+      "name": "Debaser Slussen",
+      "born": "1987-10-10",
+      "dead": "2016-07-07",
+      "description": "lorem ipsum",
+      "coordinates": { "lang": 1234, "lat": 1234 },
+      "articles": [
+        {
+          "title": "Debaser slussen stänger",
+          "link": "http://www.aftonbladet.se"
+        }
+      ]
+    }
+  ]
+}

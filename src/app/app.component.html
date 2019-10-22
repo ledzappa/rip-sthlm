@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center pt-2">R.I.P STHLM</h1>
+    <agm-map [zoom]="13" [latitude]="59.325014" [longitude]="18.06869">
+      <ng-container *ngFor="let place of places">
+        <agm-marker
+          (markerClick)="getPlace(place)"
+          [latitude]="place.location.latitude"
+          [longitude]="place.location.longitude"
+        ></agm-marker>
+      </ng-container>
+    </agm-map>
+  </div>
+</div>
+
+<div
+  class="current-place container-fluid animated fadeIn faster"
+  *ngIf="activePlace"
+>
+  <div class="row">
+    <div class="col-12">
+      <span class="jx-close" (click)="close()">X</span>
+      <h3 class="mt-3">{{ activePlace.name }}</h3>
+      <h6 class="mb-4">
+        <fa-icon [icon]="faHeart"></fa-icon> {{ activePlace.born }} -
+        <fa-icon [icon]="faCross"></fa-icon> {{ activePlace.dead }}
+      </h6>
+      <ul class="list-unstyled text-break">
+        <ng-container *ngFor="let article of activePlace.articles">
+          <li class="pb-2">{{ article.link }}</li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>
